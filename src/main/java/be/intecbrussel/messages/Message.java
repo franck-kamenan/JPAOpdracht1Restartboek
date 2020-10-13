@@ -1,4 +1,4 @@
-package be.intecbrussel;
+package be.intecbrussel.messages;
 
 import javax.persistence.*;
 
