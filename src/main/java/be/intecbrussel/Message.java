@@ -1,5 +1,8 @@
 package be.intecbrussel;
 
+import javax.persistence.*;
+
+@Entity
 public class Message {
 
     private long id;
@@ -14,6 +17,7 @@ public class Message {
         this.text = text;
     }
 
+    @Id
     public long getId() {
         return id;
     }
