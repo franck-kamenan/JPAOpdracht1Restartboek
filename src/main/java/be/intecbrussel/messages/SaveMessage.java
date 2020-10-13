@@ -16,10 +16,10 @@ public class SaveMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = new Message(1, "Hello World");
+            Message message = new Message(1, "I am in the Message table.");
             em.persist(message);
             tx.commit();
-            System.out.println("Message saved");
+            System.out.println("Message saved in the Message table.");
         }finally {
 
             if (em != null)
