@@ -2,7 +2,7 @@ package be.intecbrussel.messages;
 
 import javax.persistence.*;
 
-public class SaveMessage {
+public class GetMessage {
 
     public static void main(String[] args) {
 
@@ -16,12 +16,10 @@ public class SaveMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = new Message(1, "De boodschap is in de Message table.");
-            em.persist(message);
+            Message message = em.find(Message.class, 1L);
+            System.out.println(message.getText());
             tx.commit();
-            System.out.println("Message saved in the Message table.");
         }finally {
-
             if (em != null)
                 em.close();
             if (emf != null)
