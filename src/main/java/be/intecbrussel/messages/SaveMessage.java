@@ -16,7 +16,7 @@ public class SaveMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = new Message(1, "De boodschap is in de Message table.");
+            Message message = new Message(1, "De boodschap van Opdracht 1 is in de Message table.");
             em.persist(message);
             tx.commit();
             System.out.println("Message saved in the Message table.");
