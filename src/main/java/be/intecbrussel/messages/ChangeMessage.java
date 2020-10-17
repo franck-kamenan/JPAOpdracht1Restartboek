@@ -2,7 +2,7 @@ package be.intecbrussel.messages;
 
 import javax.persistence.*;
 
-public class GetMessage {
+public class ChangeMessage {
 
     public static void main(String[] args) {
 
@@ -17,8 +17,10 @@ public class GetMessage {
             tx.begin();
 
             Message message = em.find(Message.class, 3);
-            System.out.println(message.getText());
+            message.setText("Hello Mars");
             tx.commit();
+            em.close();
+            message.setText("Hello Venus");
         }finally {
             if (em != null)
                 em.close();

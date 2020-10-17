@@ -6,14 +6,14 @@ import javax.persistence.*;
 public class Message {
 
     @Id
-    private long id;
+    private int id;
     private String text;
 
     public Message() {
 
     }
 
-    public Message(long id, String text) {
+    public Message(int id, String text) {
         this.id = id;
         this.text = text;
     }
@@ -22,7 +22,7 @@ public class Message {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
