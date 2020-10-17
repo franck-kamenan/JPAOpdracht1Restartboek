@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Message {
 
+    @Id
     private long id;
     private String text;
 
@@ -17,7 +18,6 @@ public class Message {
         this.text = text;
     }
 
-    @Id
     public long getId() {
         return id;
     }
