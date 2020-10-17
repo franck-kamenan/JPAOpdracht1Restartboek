@@ -1,8 +1,8 @@
-package be.intecbrussel.messages;
+package be.intecbrussel.p29opdracht1;
 
 import javax.persistence.*;
 
-public class ChangeMessage {
+public class ChangeVisitor {
 
     public static void main(String[] args) {
 
@@ -16,11 +16,10 @@ public class ChangeMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = em.find(Message.class, 3);
-            message.setText("Hello Mars");
+            Visitor visitor = em.find(Visitor.class, 3);
+            visitor.setName("Alien");
             tx.commit();
             em.close();
-            message.setText("Hello Venus");
         }finally {
             /*if (em != null)
                 em.close();*/

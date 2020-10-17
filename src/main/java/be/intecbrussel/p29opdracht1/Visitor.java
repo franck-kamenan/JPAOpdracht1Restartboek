@@ -6,27 +6,27 @@ import javax.persistence.*;
 public class Visitor {
 
     @Id
-    private long id;
+    private int id;
     private String name;
 
     public Visitor() {
 
     }
 
-    public Visitor(long id, String name) {
+    public Visitor(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public String getText() {
+    public String getName() {
         return name;
     }
 
-    public void setText(String text) {
+    public void setName(String name) {
         this.name = name;
     }
 }
