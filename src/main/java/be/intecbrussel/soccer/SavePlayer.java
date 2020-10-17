@@ -1,8 +1,8 @@
-package be.intecbrussel.messages;
+package be.intecbrussel.soccer;
 
 import javax.persistence.*;
 
-public class SaveMessage {
+public class SavePlayer {
 
     public static void main(String[] args) {
 
@@ -16,16 +16,24 @@ public class SaveMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = new Message(3, "Trinity Message.");
-            em.persist(message);
+            Player player = new Player();
+            player.setNumber(1);
+            player.setClub("LA Galaxy");
+            player.setName("Marske");
+
+            em.persist(player);
             tx.commit();
-            System.out.println("Message saved in the Message table.");
+            System.out.println("Player saved");
         }finally {
 
-            if (em != null)
+            if (em != null){
+
                 em.close();
-            if (emf != null)
+            }
+            if (emf != null){
+
                 emf.close();
+            }
         }
     }
 }
