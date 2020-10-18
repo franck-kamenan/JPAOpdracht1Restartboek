@@ -17,13 +17,17 @@ public class GetMessage {
             tx.begin();
 
             Message message = em.find(Message.class, 3);
-            System.out.println(message.getText());
-            Message message2 = em.find(Message.class, 1);
-            System.out.println(message2.getText());
+            message.setText("Hello Mars");
+            /*Message message2 = em.find(Message.class, 1);
+            System.out.println(message2.getText());*/
             tx.commit();
+            message.setText("Hello Venus");
+            tx.begin();
+            tx.commit();
+            em.close();
         }finally {
-            if (em != null)
-                em.close();
+            /*if (em != null)
+                em.close();*/
             if (emf != null)
                 emf.close();
         }
