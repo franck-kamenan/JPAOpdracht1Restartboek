@@ -17,13 +17,8 @@ public class GetMessage {
             tx.begin();
 
             Message message = em.find(Message.class, 3);
-            message.setText("Hello Mars");
-            /*Message message2 = em.find(Message.class, 1);
-            System.out.println(message2.getText());*/
-            tx.commit();
-            message.setText("Hello Venus");
-            tx.begin();
-            tx.commit();
+            message.setText("Hello Jupiter");
+            tx.rollback();
             em.close();
         }finally {
             /*if (em != null)
