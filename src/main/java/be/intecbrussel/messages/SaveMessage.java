@@ -16,7 +16,7 @@ public class SaveMessage {
             EntityTransaction tx = em.getTransaction();
             tx.begin();
 
-            Message message = new Message(3, "Trinity Message.");
+            Message message = new Message(1, "First Avenger.");
             em.persist(message);
             tx.commit();
             System.out.println("Message saved in the Message table.");

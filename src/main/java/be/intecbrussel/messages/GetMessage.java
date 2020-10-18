@@ -18,6 +18,8 @@ public class GetMessage {
 
             Message message = em.find(Message.class, 3);
             System.out.println(message.getText());
+            Message message2 = em.find(Message.class, 1);
+            System.out.println(message2.getText());
             tx.commit();
         }finally {
             if (em != null)

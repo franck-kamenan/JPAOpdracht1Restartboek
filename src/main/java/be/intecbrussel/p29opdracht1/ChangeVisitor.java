@@ -17,7 +17,8 @@ public class ChangeVisitor {
             tx.begin();
 
             Visitor visitor = em.find(Visitor.class, 3);
-            visitor.setName("Alien");
+            em.detach(visitor);
+            visitor.setName("Predator");
             tx.commit();
             em.close();
         }finally {
